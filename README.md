@@ -83,32 +83,3 @@ MEMORY
 | `.stack`  | Stack memory             | Top of RAM              |
 | `.heap`   | Dynamic allocation       | RAM                     |
 
-
-Building and Flashing
-🔧 Prerequisites
-
-GNU Arm Embedded Toolchain (arm-none-eabi-gcc, arm-none-eabi-objcopy, arm-none-eabi-size)
-
-Make (MSYS2/WSL or Linux)
-
-ST-Link or J-Link programmer
-
-🛠️ Build the Project
-
-git clone https://github.com/Abunique/BAREMETAL_STM32_startup_linkerscript.git
-cd BAREMETAL_STM32_startup_linkerscript
-make
-
-final_sh.elf   → Executable firmware
-final.map      → Memory map report
-
-🔩 Flash to Target
-
-st-flash write final_sh.bin 0x08000000
-BAREMETAL_STM32_startup_linkerscript/
-├── main.c                 # Application entry point
-├── startup.s              # Assembly startup code (Reset handler, vector table)
-├── linker.ld              # Custom linker script for STM32 memory mapping
-├── Makefile               # Simple GCC build script
-└── README.md              # This file
-
